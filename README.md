@@ -1,9 +1,6 @@
 # @draganfilipovic/available-package-names
 list all available npm package names for given letters count
 
-## Requirement
-NodeJs v8+
-
 ## Install
 ```
 npm i @draganfilipovic/available-package-names
