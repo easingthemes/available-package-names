@@ -1,0 +1,23 @@
+{
+  "name": "@draganfilipovic/available-package-names",
+  "version": "1.0.1",
+  "description": "list all available npm package names for given letters count",
+  "author": "Dragan Filipovic",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:easingthemes/available-package-names.git"
+  },
+  "keywords": [
+    "available",
+    "npm",
+    "name"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "debug": "node $NODE_DEBUG_OPTION ./examples/twoLetters"
+  },
+  "dependencies": {
+    "all-the-package-names": "^1.3591.0"
+  }
+}
