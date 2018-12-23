@@ -1,15 +1,23 @@
 const allNpmNames = require('all-the-package-names');
 const getAllWords = require('./getAllWords');
 
-const getAvailableNames = (wordLength) => {
-  const allWords = getAllWords(wordLength);
+const getAvailableNames = (data) => {
+  let allPossibleNames = [];
+  if (typeof data === 'number') {
+    allPossibleNames = getAllWords(data);
+  } else if (Array.isArray(data)) {
+    allPossibleNames = data;
+  }
+
   const available = [];
 
   let i = 0;
-  const iMax = allWords.length;
+  const iMax = allPossibleNames.length;
+
   for (; i < iMax; i++) {
-    const word = allWords[i];
-    if (allNpmNames.indexOf(word) < 0 || allNpmNames.includes(`@${word}/`)) {
+    const word = allPossibleNames[i];
+
+    if (allNpmNames.indexOf(word) < 0 && !allNpmNames.includes(`@${word}/`)) {
       available.push(word);
     }
   }
