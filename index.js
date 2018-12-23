@@ -9,7 +9,7 @@ const getAvailableNames = (wordLength) => {
   const iMax = allWords.length;
   for (; i < iMax; i++) {
     const word = allWords[i];
-    if (allNpmNames.indexOf(word) < 0 && allNpmNames.indexOf(`@${word}/`) < 0) {
+    if (allNpmNames.indexOf(word) < 0 || allNpmNames.includes(`@${word}/`)) {
       available.push(word);
     }
   }
